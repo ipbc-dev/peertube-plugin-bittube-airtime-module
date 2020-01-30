@@ -21,7 +21,7 @@ async function register ({
 }
 
 async function unregister () {
-  return
+
 }
 
 module.exports = {

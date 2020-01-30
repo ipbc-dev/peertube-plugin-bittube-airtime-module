@@ -21,6 +21,18 @@
     {
       "script": "client/common-client-plugin.js",
       "scopes": [ "common" ]
+    },
+    {
+      "script": "client/common-airtime.js",
+      "scopes": [ ]
+    },
+    {
+      "script": "client/common-api.js",
+      "scopes": [ ]
+    },
+    {
+      "script": "client/common-constants.js",
+      "scopes": [ ]
     }
   ],
 
