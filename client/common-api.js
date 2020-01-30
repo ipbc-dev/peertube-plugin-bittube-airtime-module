@@ -12,20 +12,20 @@ async function callAPI (path) {
 export async function getAccountInfo (name) {
   const apiURL = '/api/v1/accounts/' + name
   const info = await callAPI(apiURL)
-  console.log('getAccountInfo', name, info)
+  //   shared.debug('getAccountInfo', name, info)
   return info
 }
 
 export async function getChannelInfo (name) {
   const apiURL = '/api/v1/video-channels/' + name
   const info = await callAPI(apiURL)
-  console.log('getChannelInfo', name, info)
+  //   shared.debug('getChannelInfo', name, info)
   return info
 }
 
 export async function getVideoInfo (name) {
   const apiURL = '/api/v1/videos/' + name
   const info = await callAPI(apiURL)
-  console.log('getVideoInfo', name, info)
+  //   shared.debug('getVideoInfo', name, info)
   return info
 }

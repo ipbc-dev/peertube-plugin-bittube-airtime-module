@@ -31,7 +31,7 @@
       "scopes": [ ]
     },
     {
-      "script": "client/common-constants.js",
+      "script": "client/common-shared.js",
       "scopes": [ ]
     }
   ],
