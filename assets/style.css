@@ -16,16 +16,8 @@ body {
     min-height: 100px;
 }
 /* Link Account button */
-#airtime-link-account-btn{
-    position: relative;
-    color: var(--whiteColor) !important;
-    padding: 5px 20px 0px 73px;
-    min-height: 40px;
-}
-
-#airtime-link-account-btn:hover{
-    background-color: rgba(255,255,255,.1);
-    cursor: pointer;
+#airtime-linking-account-btn .am-linkaccount-button{
+    cursor: pointer !important;
 }
 
 .am-linkaccount-button .am-linkaccount-text.enabled{
@@ -47,7 +39,8 @@ body {
 
 /* Link Account tooltip */
 .am-linkaccount-button .details{
-    top: 66px;
+    top: 34px;
+    left: 140px;
 }
 /* Airtime Module icon */
 #am-PoweredByBitTubeContainer div svg{

@@ -50,12 +50,12 @@ function register ({ registerHook, peertubeHelpers }) {
     }else{
       ui.removeLinkAccountButton()
     }
-    if(localStorage.getItem('hide-airtime-blue-header') != true && localStorage.getItem('hide-airtime-blue-header') != 'true'){
-      ui.injectAirtimeBlueHeader(peertubeHelpers)
-    }
   }
   if(window.location.path == '/my-account/settings'){ /* TO-DO: ¿add condition to check if the account it's already linked? */
     checkLinkAccountButton(); /* Static call for first load */
+  }
+  if(localStorage.getItem('hide-airtime-blue-header') != true && localStorage.getItem('hide-airtime-blue-header') != 'true'){
+    ui.injectAirtimeBlueHeader(peertubeHelpers) /* Static call for first load */
   }
 
 }
