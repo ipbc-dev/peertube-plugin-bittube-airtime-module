@@ -58,8 +58,10 @@
 
 # How to link your PeerTube Airtime with your Airtime extension user
 ######    1. At first, you need to install the Airtime extension, create a user and log in with it. For further assistance go to: 
-            https://bittubeapp.com/
-            https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser-extension-on-bittubetv
+
+https://bittubeapp.com/
+
+https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser-extension-on-bittubetv
     
 ######    2. After being logged in the Airtime extension, you will need to log in your chosen instance. 
 ######        Important: If you want to link your instance Airtime, you need to log in as 'root', otherwise you will only link the Airtime for that user (no-root).
