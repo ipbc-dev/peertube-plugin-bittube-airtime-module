@@ -1,5 +1,5 @@
 export const AIRTIMEMODULEURL = 'https://bittubeapp.com/tubepay/airtime.loader.js'
-export const LinkApiUrl = 'http://localhost:8080/link'
+export const LinkApiUrl = 'https://us-central1-bittube-airtime-extension.cloudfunctions.net/peertubeLinkHandler'
 
 // Fixed data for the whole Peertube Federation
 // Platform Name: PeerTube Federation

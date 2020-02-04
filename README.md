@@ -45,7 +45,7 @@ AirTime Module plugin for PeerTube instances and users.
 
     5. Confirm the data by clicking on submenu button.
 
-    6. Reload the page to apply the changes. (Better with Ctrl + F5)
+    6. Reload the page to see the changes. (Better with Ctrl + F5)
 
     7. Now, by hovering your Link Account button, it will show a message with you Link status.
     https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot3.jpg

@@ -9,7 +9,7 @@ export function injectLinkAccountButton() {
         const linkAccountTitle = document.createElement('div')
         linkAccountTitle.id = 'airtime-linkAccount-title'
         linkAccountTitle.className = 'airtime-linking-account-title'
-        linkAccountTitle.innerText = 'AIRTIME ACCOUNT LINKING'
+        linkAccountTitle.innerText = 'AIRTIME ACCOUNT LINKING ** BETA **'
         /* Content */
         const linkAccountContent = document.createElement('div')
         linkAccountContent.class = 'airtime-linkAccount-content'
