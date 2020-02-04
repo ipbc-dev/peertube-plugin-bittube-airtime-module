@@ -46,7 +46,7 @@ function register ({ registerHook, peertubeHelpers }) {
 
   function checkLinkAccountButton(){
     if(isLoggedIn){ 
-      ui.injectLinkAccountButton()
+      ui.injectLinkAccountButton(peertubeHelpers)
     }else{
       ui.removeLinkAccountButton()
     }

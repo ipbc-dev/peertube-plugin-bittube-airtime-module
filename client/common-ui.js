@@ -1,7 +1,7 @@
 import * as shared from './common-shared.js'
 
 /* This function injects the linkAccount button into the DOM  */
-export function injectLinkAccountButton() {
+export function injectLinkAccountButton(peertubeHelpers) {
     const buttonDOM = document.getElementById('airtime-link-account-btn');
     if (buttonDOM == null || buttonDOM == undefined) { /* If the button is already rendered, do nothing */
         shared.debug("=== ====AIRTIME DEBUG ====== injecting linkAccountButton");
@@ -9,10 +9,45 @@ export function injectLinkAccountButton() {
         const linkAccountTitle = document.createElement('div')
         linkAccountTitle.id = 'airtime-linkAccount-title'
         linkAccountTitle.className = 'airtime-linking-account-title'
-        linkAccountTitle.innerText = 'AIRTIME ACCOUNT LINKING ** BETA **'
+        linkAccountTitle.innerText = '** BETA ** AIRTIME ACCOUNT LINKING ** BETA **'
         /* Content */
         const linkAccountContent = document.createElement('div')
         linkAccountContent.class = 'airtime-linkAccount-content'
+        /* Links */
+        const icon1 = document.createElement('img')
+        icon1.src = peertubeHelpers.getBaseStaticRoute() + '/images/icon1.svg'
+        const icon2 = document.createElement('img')
+        icon2.src = peertubeHelpers.getBaseStaticRoute() + '/images/icon2.svg'
+        const a1 = document.createElement('a')
+        const span1 = document.createElement('span')
+        a1.href = 'https://bittube.app'
+        a1.className = 'airtime-linking-extra-links-with-icon'
+        span1.innerText = 'Get Airtime extension'
+        a1.setAttribute('target', '_blank')
+        a1.appendChild(icon1)
+        a1.appendChild(span1)
+        const div1 = document.createElement('div')
+        div1.appendChild(a1);
+        // div1.className="airtime-linking-extra-links-with-icon-div"
+        const a2 = document.createElement('a')
+        const span2 = document.createElement('span')
+        a2.href = 'https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com'
+        a2.className = 'airtime-linking-extra-links-with-icon'
+        span2.innerText = 'Learn more about Airtime'
+        a2.setAttribute('target', '_blank')
+        a2.appendChild(icon2)
+        a2.appendChild(span2)
+        const div2 = document.createElement('div')
+        div2.appendChild(a2);
+        div2.className="airtime-linking-extra-links-with-icon-div"
+        const linkAccountLinks = document.createElement('div')
+        const br = document.createElement('br')
+        linkAccountLinks.className = "airtime-linking-extra-links-container"
+        linkAccountLinks.appendChild(div1)
+        // linkAccountLinks.appendChild(br)
+        linkAccountLinks.appendChild(div2)
+        // linkAccountLinks.innerHTML = '<a target="_blank" href="https://bittube.app"><img id="airtime-get-airtime-extension-icon" /> Get Airtime extension</a>'
+        // linkAccountLinks.innerHTML += '<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"><img id="airtime-get-airtime-info-icon" />  Learn more about Airtime</a>'
         /* Button */
         const linkAccountElem = document.createElement('div')
         linkAccountElem.id = 'airtime-linking-account-btn'
@@ -22,6 +57,7 @@ export function injectLinkAccountButton() {
         // linkAccountElem.setAttribute('data-airtime-link-account-url', 'http://localhost:8080/link')
         linkAccountElem.setAttribute('data-airtime-link-account-use-event', true)
         linkAccountContent.appendChild(linkAccountElem)
+        linkAccountContent.appendChild(linkAccountLinks)
         // const headerBlock = document.querySelector('.header .top-left-block');
         shared.debug("=== ====AIRTIME DEBUG ====== element is: ", linkAccountContent);
         // headerBlock.appendChild(linkAccountElem);
@@ -53,7 +89,7 @@ export function injectAirtimeBlueHeader(peertubeHelpers) {
     const airtimeSpanInfo = document.createElement('span')
     airtimeSpanInfo.id = 'airtime-message-top-header'
     airtimeSpanInfo.className = 'airtime-message-top-header'
-    airtimeSpanInfo.innerHTML = '<span class="messageTopHeader">Get the BitTube extension <a target="_blank" href="https://bittubeapp.com">here</a> to start earning with AirTime!<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"> Learn more</a></span>'
+    airtimeSpanInfo.innerHTML = '<span class="messageTopHeader">Get the Airtime extension <a target="_blank" href="https://bittube.app">here</a> to start earning Tubes!<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"> Learn more</a></span>'
 
     const airtimeSpanClose = document.createElement('div')
     airtimeSpanClose.id = 'airtime-close-top-header'
