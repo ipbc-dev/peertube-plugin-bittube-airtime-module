@@ -24,7 +24,7 @@ export async function detectContentID (url) {
 function getContentIdFromAccount (account) {
   return {
     contentName: account.name + '@' + account.host,
-    contentDisplayName: account.displayName,
+    contentDisplayName: 'PeerTube ' + account.name + '@' + account.host,
     platformUUID: shared.PLATFORMUUID,
     platformDisplayName: shared.PLATFORMDISPLAY
   }
@@ -56,6 +56,10 @@ function setContentIdEmpty () {
     contentDisplayName: null,
     platformUUID: shared.PLATFORMUUID,
     platformDisplayName: shared.PLATFORMDISPLAY
+  }
+  if (!shared.peertubeSupportEnabled) {
+    setupData.contentName = 'root@' + window.location.host
+    setupData.contentDisplayName = 'PeerTube root@' + window.location.host
   }
   return setAirtimeContentID(setupData)
 }

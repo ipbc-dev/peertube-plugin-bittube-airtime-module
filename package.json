@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-airtime-module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "BitTube AirTime Module",
   "engine": {
     "peertube": ">=1.3.0"
@@ -13,7 +13,9 @@
   "author": "BitTube",
   "bugs": "https://github.com/ipbc-dev/peertube-plugin-airtime-module/issues",
   "library": "./main.js",
-  "staticDirs": {},
+  "staticDirs": {
+    "images": "public/images"
+  },
   "css": [
     "assets/style.css"
   ],
@@ -32,6 +34,10 @@
     },
     {
       "script": "client/common-shared.js",
+      "scopes": [ ]
+    },
+    {
+      "script": "client/common-ui.js",
       "scopes": [ ]
     }
   ],

@@ -1,10 +1,18 @@
 export const AIRTIMEMODULEURL = 'https://bittubeapp.com/tubepay/airtime.loader.js'
+export const LinkApiUrl = 'http://localhost:8080/link'
 
 // Fixed data for the whole Peertube Federation
 // Platform Name: PeerTube Federation
 // Platform UUID: a93e5513-4772-e3d0-8b9f-82bfe73a71de
 export const PLATFORMDISPLAY = 'PeerTube Federation'
 export const PLATFORMUUID = 'a93e5513-4772-e3d0-8b9f-82bfe73a71de'
+
+let peertubeSupportEnabled = false
+
+export function setPeertubeSupport (newVal) {
+  peertubeSupportEnabled = newVal
+  return peertubeSupportEnabled
+}
 
 let debugEnabled = false
 

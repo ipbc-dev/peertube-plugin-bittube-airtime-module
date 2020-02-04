@@ -1,0 +1,123 @@
+/* Color Variables */
+body {
+    --airtimeTextColor: #000000;
+    --airtimeIconColor: #000000;
+}
+/* Link Account title */
+.airtime-linking-account-title{
+    text-transform: uppercase;
+    color: var(--mainColor);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+.airtime-linkAccount-content{
+    min-height: 100px;
+}
+/* Link Account button */
+#airtime-link-account-btn{
+    position: relative;
+    color: var(--whiteColor) !important;
+    padding: 5px 20px 0px 73px;
+    min-height: 40px;
+}
+
+#airtime-link-account-btn:hover{
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+}
+
+.am-linkaccount-button .am-linkaccount-text.enabled{
+    color: var(--airtimeTextColor) !important;
+}
+
+/* Link Account icon */
+/* #airtime-link-account-btn span svg{
+    height: 24px !important;
+    width: 24px !important;
+} */
+/* #airtime-link-account-btn span svg .st0{
+    fill: transparent;
+} */
+/* #airtime-link-account-btn span svg .st1{
+    stroke: var(--airtimeIconColor);
+    stroke-width: 4px;
+} */
+
+/* Link Account tooltip */
+.am-linkaccount-button .details{
+    top: 66px;
+}
+/* Airtime Module icon */
+#am-PoweredByBitTubeContainer div svg{
+    height: 24px !important;
+}
+.am-linkaccount-button{
+    display: inline-flex !important;
+}
+.am-linkaccount-text{
+    padding: 4px 20px 0px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    word-break: break-word;
+}
+
+/* Airtime install extension suggest blue header */
+.airtime-install-extension-suggestion-header{
+    position: fixed;
+    width: 100%;
+    height: 0px;
+    background: #fff;
+    z-index: 2;
+    background-color: #00ABFF;
+    z-index: 100;
+    left: 0px;
+    transition: all 2.5s ease 2s;
+}
+.airtime-install-extension-suggestion-header-height{
+    height: 30px;
+}
+.airtime-message-top-header{
+    position: relative;
+    float: left;
+    left: 27px;
+    top: 6px;
+    color: #ffffff;
+}
+.airtime-message-top-header a{
+    color: #ffffff8f;
+    outline: none;
+    text-decoration: none;
+}
+.airtime-close-top-header{
+    position: relative;
+    float: right;
+    top: 5px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+.airtime-close-top-header img{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.airtime-header-top-distance{
+    top: 30px !important;
+}
+.airtime-body-margin-top{
+    margin-top: 80px;
+}
+
+/* Left-menu footer icons */
+.airtime-footer-padding{
+    padding-bottom: 45px !important;
+}
+
+/* Transitions */
+.header,
+body,
+menu.logged-in .footer{
+    transition: all 1s ease 0s;
+}
