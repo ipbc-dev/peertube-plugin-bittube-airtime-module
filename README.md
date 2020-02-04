@@ -44,6 +44,7 @@ AirTime Module plugin for PeerTube instances and users.
     4. Below the title 'AIRTIME ACCOUNT LINKING', click ont the Link Account button, a submenu will appear from the right side.
 
     5. Confirm the data by clicking on submenu button.
+    https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot5.jpg
 
     6. Reload the page to see the changes. (Better with Ctrl + F5)
 
