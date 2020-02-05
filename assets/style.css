@@ -2,6 +2,7 @@
 body {
     --airtimeTextColor: #000000;
     --airtimeIconColor: #000000;
+    --airtimeIconHover: #00abff;
 }
 /* Link Account title */
 .airtime-linking-account-title{
@@ -23,9 +24,6 @@ body {
 .am-linkaccount-button .am-linkaccount-text.enabled{
     color: var(--airtimeTextColor) !important;
 }
-#airtime-linking-account-btn{
-    /* margin-bottom: 20px; */
-}
 .airtime-linking-extra-links-with-icon{
     padding: 10px 0px;
     font-size: 16px;
@@ -41,7 +39,7 @@ body {
     text-decoration: none;
     color: var(--airtimeTextColor);
 }
-.airtime-linking-extra-links-with-icon img{
+.airtime-linking-extra-links-with-icon svg{
     height: auto;
     width: 32px;
 }
@@ -49,18 +47,10 @@ body {
     margin-top: 20px !important;
 }
 /* Link Account icon */
-/* #airtime-link-account-btn span svg{
-    height: 24px !important;
-    width: 24px !important;
-} */
-/* #airtime-link-account-btn span svg .st0{
-    fill: transparent;
-} */
-/* #airtime-link-account-btn span svg .st1{
-    stroke: var(--airtimeIconColor);
-    stroke-width: 4px;
-} */
-
+.airtime-linking-extra-links-with-icon:hover #Pfad_936,
+.airtime-linking-extra-links-with-icon:hover .cls-3{
+    fill: var(--airtimeIconHover) !important;
+}
 /* Link Account tooltip */
 .am-linkaccount-button .details{
     top: 34px;
