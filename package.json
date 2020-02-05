@@ -1,5 +1,5 @@
 {
-  "name": "peertube-plugin-airtime-module",
+  "name": "peertube-plugin-bittube-airtime-module",
   "version": "0.0.1",
   "description": "BitTube AirTime Module",
   "engine": {
@@ -9,9 +9,9 @@
     "peertube",
     "plugin"
   ],
-  "homepage": "https://github.com/ipbc-dev/peertube-plugin-airtime-module",
+  "homepage": "https://github.com/ipbc-dev/peertube-plugin-bittube-airtime-module",
   "author": "BitTube",
-  "bugs": "https://github.com/ipbc-dev/peertube-plugin-airtime-module/issues",
+  "bugs": "https://github.com/ipbc-dev/peertube-plugin-bittube-airtime-module/issues",
   "library": "./main.js",
   "staticDirs": {
     "images": "public/images"
