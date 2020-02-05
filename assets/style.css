@@ -22,7 +22,7 @@ body {
 }
 
 .am-linkaccount-button .am-linkaccount-text.enabled{
-    color: var(--airtimeTextColor) !important;
+    color: var(--mainForegroundColor) !important;
 }
 .airtime-linking-extra-links-with-icon{
     padding: 10px 0px;
@@ -30,14 +30,14 @@ body {
     font-weight: 400;
     word-break: break-word;
     text-decoration: none;
-    color: var(--airtimeTextColor);
+    color: var(--mainForegroundColor);
 }
 .airtime-linking-extra-links-with-icon span{
     margin-left: 10px;
 }
 .airtime-linking-extra-links-with-icon:hover{
     text-decoration: none;
-    color: var(--airtimeTextColor);
+    color: var(--mainForegroundColor);
 }
 .airtime-linking-extra-links-with-icon svg{
     height: auto;
