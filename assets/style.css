@@ -1,7 +1,5 @@
 /* Color Variables */
 body {
-    --airtimeTextColor: #000000;
-    --airtimeIconColor: #000000;
     --airtimeIconHover: #00abff;
 }
 /* Link Account title */
@@ -42,6 +40,10 @@ body {
 .airtime-linking-extra-links-with-icon svg{
     height: auto;
     width: 32px;
+    fill: var(--mainForegroundColor);
+}
+.airtime-linking-extra-links-with-icon svg path{
+    fill: var(--mainForegroundColor);
 }
 .airtime-linking-extra-links-with-icon-div{
     margin-top: 20px !important;
@@ -80,7 +82,6 @@ body {
     background-color: #00ABFF;
     z-index: 100;
     left: 0px;
-    transition: all 2.5s ease 2s;
 }
 .airtime-install-extension-suggestion-header-height{
     height: 30px;
@@ -120,11 +121,4 @@ body {
 /* Left-menu footer icons */
 .airtime-footer-padding{
     padding-bottom: 45px !important;
-}
-
-/* Transitions */
-.header,
-body,
-menu.logged-in .footer{
-    transition: all 1s ease 0s;
 }
