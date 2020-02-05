@@ -76,7 +76,7 @@ https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser
 
 ######    6. Reload the page to see the changes. (Better with Ctrl + F5)
 
-######    7. Now, by hovering your Link Account button, it will show a message with you Link status.
+######    7. Now, by hovering your Link Account button, it will show a message with your Link status.
 ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot3.jpg)
 
 ######    8. You can also check the linking opening the Airtime Extension and going to the links section.
