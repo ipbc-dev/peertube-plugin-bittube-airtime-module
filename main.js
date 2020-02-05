@@ -13,8 +13,7 @@ async function register ({
     name: 'airtime_support_peertube',
     label: 'Donate host airtime to PeerTube Federation',
     type: 'input-checkbox',
-    private: false,
-    default: true
+    private: false
   })
 }
 
