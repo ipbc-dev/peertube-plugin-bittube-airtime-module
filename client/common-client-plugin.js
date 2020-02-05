@@ -29,7 +29,7 @@ function register ({ registerHook, peertubeHelpers }) {
 
   document.addEventListener('airtime-link-account-info', (event) => {
     shared.debug('airtime-link-account-info', event)
-    fetch(shared.linkApiUrl, {
+    fetch(shared.LinkApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
