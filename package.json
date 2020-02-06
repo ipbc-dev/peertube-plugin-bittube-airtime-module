@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-bittube-airtime-module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "BitTube AirTime Module",
   "engine": {
     "peertube": ">=1.3.0"
@@ -22,25 +22,26 @@
   "clientScripts": [
     {
       "script": "client/common-client-plugin.js",
-      "scopes": [ "common" ]
+      "scopes": [
+        "common"
+      ]
     },
     {
       "script": "client/common-airtime.js",
-      "scopes": [ ]
+      "scopes": []
     },
     {
       "script": "client/common-api.js",
-      "scopes": [ ]
+      "scopes": []
     },
     {
       "script": "client/common-shared.js",
-      "scopes": [ ]
+      "scopes": []
     },
     {
       "script": "client/common-ui.js",
-      "scopes": [ ]
+      "scopes": []
     }
   ],
-
   "translations": {}
 }
