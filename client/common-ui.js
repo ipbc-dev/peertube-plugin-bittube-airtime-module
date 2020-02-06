@@ -69,24 +69,25 @@ export function injectAirtimeBlueHeader(peertubeHelpers) {
     installAirtimeHeader.id = 'airtime-install-extension-suggestion-header'
     installAirtimeHeader.className = 'airtime-install-extension-suggestion-header'
 
-    const airtimeSpanInfo = document.createElement('span')
-    airtimeSpanInfo.id = 'airtime-message-top-header'
-    airtimeSpanInfo.className = 'airtime-message-top-header'
-    airtimeSpanInfo.innerHTML = '<span class="messageTopHeader">Get the Airtime extension <a target="_blank" href="https://bittube.app">here</a> to start earning Tubes!<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"> Learn more</a></span>'
+    // const airtimeSpanInfo = document.createElement('span')
+    // airtimeSpanInfo.id = 'airtime-message-top-header'
+    // airtimeSpanInfo.className = 'airtime-message-top-header'
+    // airtimeSpanInfo.innerHTML = '<span class="airtime-messageTopHeader">Get the Airtime extension <a target="_blank" href="https://bittube.app">here</a> to start earning Tubes!<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"> Learn more</a></span>'
 
-    const airtimeSpanClose = document.createElement('div')
-    airtimeSpanClose.id = 'airtime-close-top-header'
-    airtimeSpanClose.className = 'airtime-close-top-header'
-    const airtimeCloseImg = document.createElement('img')
-    airtimeCloseImg.src = peertubeHelpers.getBaseStaticRoute() + '/images/close.svg'
-    airtimeSpanClose.appendChild(airtimeCloseImg)
+    // const airtimeSpanClose = document.createElement('div')
+    // airtimeSpanClose.id = 'airtime-close-top-header'
+    // airtimeSpanClose.className = 'airtime-close-top-header'
+    // const airtimeCloseImg = document.createElement('img')
+    // airtimeCloseImg.src = peertubeHelpers.getBaseStaticRoute() + '/images/close.svg'
+    // airtimeSpanClose.appendChild(airtimeCloseImg)
+    const airtimeSpanClose = createSpanClose(peertubeHelpers.getBaseStaticRoute());
+    const airtimeSpanInfo = createSpanInfo();
 
     installAirtimeHeader.appendChild(airtimeSpanInfo)
     installAirtimeHeader.appendChild(airtimeSpanClose)
 
     const elementHTML = document.getElementsByTagName('html')[0]
     if (elementHTML) elementHTML.insertBefore(installAirtimeHeader, elementHTML.children[0])
-    const DOMinstallAirtimeHeader = document.getElementById('airtime-install-extension-suggestion-header')
 
     /* Add classes to tweak CSS */
     const originalHeader = document.getElementsByClassName('header')[0]
@@ -95,15 +96,31 @@ export function injectAirtimeBlueHeader(peertubeHelpers) {
     const originalBody = document.getElementsByTagName('body')[0]
     if (originalBody) originalBody.className = 'airtime-body-margin-top'
 
-    const footerIcons = document.querySelector('menu.logged-in .footer')
+    const footerIcons = document.querySelector('menu div.footer')
     if (footerIcons) footerIcons.className = footerIcons.className + ' airtime-footer-padding'
 
-    if (DOMinstallAirtimeHeader) DOMinstallAirtimeHeader.className = DOMinstallAirtimeHeader.className + ' airtime-install-extension-suggestion-header-height'
     /* Add event listeners */
     document.getElementById('airtime-close-top-header').addEventListener('click', () => {
         removeAirtimeBlueHeader()
         localStorage.setItem('hide-airtime-blue-header', true)
     })
+}
+
+function createSpanClose(baseURL){
+    const airtimeSpanClose = document.createElement('div')
+    airtimeSpanClose.id = 'airtime-close-top-header'
+    airtimeSpanClose.className = 'airtime-close-top-header'
+    const airtimeCloseImg = document.createElement('img')
+    airtimeCloseImg.src = baseURL + '/images/close.svg'
+    airtimeSpanClose.appendChild(airtimeCloseImg)
+    return airtimeSpanClose
+}
+function createSpanInfo(){
+    const airtimeSpanInfo = document.createElement('span')
+    airtimeSpanInfo.id = 'airtime-message-top-header'
+    airtimeSpanInfo.className = 'airtime-message-top-header'
+    airtimeSpanInfo.innerHTML = '<span class="airtime-messageTopHeader">Get the Airtime extension <a target="_blank" href="https://bittube.app">here</a> to start earning Tubes!<a target="_blank" href="https://kb.bittubeapp.com/article/152-what-is-the-purpose-of-the-bittube-browser-extension-on-bittubers-com"> Learn more</a></span>'
+    return airtimeSpanInfo
 }
 /******************* REMOVE EXTENSION SUGGEST BLUE HEADER **********************************/
 export function removeAirtimeBlueHeader() {
@@ -119,6 +136,6 @@ export function removeAirtimeBlueHeader() {
     if (originalBody) originalBody.className = originalBody.className = originalBody.className.replace('airtime-body-margin-top', '')
 
     const footerIcons = document.querySelector('menu.logged-in .footer')
-    if (footerIcons) footerIcons.className = footerIcons.className.replace('airtime-footer-padding', '')
+    if (footerIcons) footerIcons.className = footerIcons.className.replace('airtime-footer-padding', 'airtime-closed-footer-padding')
 
 }

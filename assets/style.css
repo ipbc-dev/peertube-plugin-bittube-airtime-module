@@ -76,15 +76,12 @@ body {
 .airtime-install-extension-suggestion-header{
     position: fixed;
     width: 100%;
-    height: 0px;
+    height: 30px;
     background: #fff;
     z-index: 2;
     background-color: #00ABFF;
     z-index: 100;
     left: 0px;
-}
-.airtime-install-extension-suggestion-header-height{
-    height: 30px;
 }
 .airtime-message-top-header{
     position: relative;
@@ -121,4 +118,30 @@ body {
 /* Left-menu footer icons */
 .airtime-footer-padding{
     padding-bottom: 45px !important;
+}
+
+/* MOBILE MEDIA QUERIES */
+@media (max-width: 500px){
+    .airtime-install-extension-suggestion-header{
+        height: 45px;
+    }
+    .airtime-header-top-distance{
+        top: 45px !important;
+    }
+    .airtime-body-margin-top{
+        margin-top: 95px;
+    }
+    menu .top-menu{
+        max-height: calc(100% - 35px);
+    }
+    .airtime-closed-footer-padding{
+        padding-bottom: 60px !important;
+    }
+    .airtime-close-top-header {
+        top: -10px;
+    }
+    .info-circle-animated-BT,
+    .am-PoweredByBitTube{
+        display: none;
+    }
 }
