@@ -7,7 +7,7 @@ export const LinkApiUrl = 'https://us-central1-bittube-airtime-extension.cloudfu
 export const PLATFORMDISPLAY = 'PeerTube Federation'
 export const PLATFORMUUID = 'a93e5513-4772-e3d0-8b9f-82bfe73a71de'
 
-let peertubeSupportEnabled = false
+export let peertubeSupportEnabled = false
 
 export function setPeertubeSupport (newVal) {
   peertubeSupportEnabled = newVal
