@@ -38,7 +38,20 @@
     - Before see the changes, you will need to hard reload your browser.
 
 # Quick start
+## For instance administrators
+ * Install Airtime extension and create a user
+https://bittubeapp.com/
+ * Install Airtime plugin in your instance
+ * Login in your instance as root
+ * Go to account settings
+ * Click on Link Account button and confirm data.
 
+ ## For instance users
+ * Install Airtime extension and create a user
+https://bittubeapp.com/
+ * Login in the instance with your account
+ * Go to account settings
+ * Click on Link Account button and confirm data.
 
 
 # Features for all users
