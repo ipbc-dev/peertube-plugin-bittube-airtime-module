@@ -98,8 +98,9 @@ https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser
 ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot6.jpg)
 
  *    8 There is also a linking section in the Airtime Extension. Here you can check the status and stadistics for every linked account (individualy)
- 
+
 ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot4.jpg)
+![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot9.jpg)
 
 
 
