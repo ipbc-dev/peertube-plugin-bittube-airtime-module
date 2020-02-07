@@ -78,8 +78,9 @@ https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser
  *    2 After being logged in the Airtime extension, you will need to log in your chosen instance. Important: If you want to link your instance Airtime, you need to log in as 'root', otherwise you will only link the Airtime for that user (no-root).
 
  *    3 Go to Account settings, you can find it inside the submenu next to your avatar.
-
+ ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot8.jpg)
  *    4 Below the title 'AIRTIME ACCOUNT LINKING', click ont the Link Account button, a submenu will appear from the right side.
+ ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot7.jpg)
 
  *    5 Confirm the data by clicking on submenu button.
 
