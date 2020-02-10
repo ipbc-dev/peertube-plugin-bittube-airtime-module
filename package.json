@@ -43,5 +43,21 @@
       "scopes": []
     }
   ],
-  "translations": {}
+  "translations": {
+    "en-US": "./languages/en-US/translates.json",
+    "ca-ES": "./languages/ca-ES/translates.json",
+    "cs-CZ": "./languages/cs-CZ/translates.json",
+    "de-DE": "./languages/de-DE/translates.json",
+    "es-ES": "./languages/es-ES/translates.json",
+    "eu-ES": "./languages/eu-ES/translates.json",
+    "fi-FI": "./languages/fi-FI/translates.json",
+    "fr-FR": "./languages/fr-FR/translates.json",
+    "nl-NL": "./languages/nl-NL/translates.json",
+    "pl-PL": "./languages/pl-PL/translates.json",
+    "pt-PT": "./languages/pt-PT/translates.json",
+    "ru-RU": "./languages/ru-RU/translates.json",
+    "sv-SE": "./languages/sv-SE/translates.json",
+    "zh-Hans-CN": "./languages/zh-Hans-CN/translates.json",
+    "zh-Hant-TW": "./languages/zh-Hant-TW/translates.json" 
+  }
 }

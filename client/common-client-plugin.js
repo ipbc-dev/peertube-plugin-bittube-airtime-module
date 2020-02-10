@@ -15,7 +15,7 @@ function register ({ registerHook, peertubeHelpers }) {
     /* Static calls for first load */
     shared.debug("==== AIRTIME CHECKING PATH ====== ", window.location.pathname)
     if(window.location.pathname == '/my-account/settings'){
-      ui.injectLinkAccountButton() 
+      ui.injectLinkAccountButton(peertubeHelpers) 
     }
     // if(localStorage.getItem('hide-airtime-blue-header') != true && localStorage.getItem('hide-airtime-blue-header') != 'true'){
     //   ui.injectAirtimeBlueHeader(peertubeHelpers) 
