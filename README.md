@@ -3,10 +3,10 @@
 ## BitTube AirTime Module plugin for PeerTube instances.
 
  *  This extension allows you to hook BitTube Airtime Module to your instance.
- *  BitTube Airtime is the best ad-free monetization system.
- *  This plugin does not MINE. It's not using any of your resources to create hashrate.
- *  After install this plugin and link it with your Airtime account, you will be paid in TUBE coins (cryptocurrency) based on the time that people spend in your instance. 
- *  Your users can link their accounts to their Airtime accounts, they will be paid based on the time that users spend watching his/her videos or profile.
+ *  BitTube Airtime is a crypto-native ad-free monetization system. Learn more: https://kb.bittubeapp.com/category/57-airtime
+ *  This plugin is not a crypto miner! It does not use heavy system resources.
+ *  After installing this plugin on your instance and linking it with your Airtime account, you will earn TUBE cryptocurrency based on the time that people spend on your feeds and menus (not content).
+ *  Users (uploaders) can link their Peertube account to their own BitTube Airtime account. Then they will earn TUBE based on the time that others watch their content and profile page.
 
 # Advantages
 ######    With the BitTube AirTime Module, you are in full control of your online revenue while being able to provide an ad-free experience to your visitors.
@@ -21,8 +21,8 @@
 ######    Start earning from the very first visit on your website, independent from ad networks and advertiser policies. Earnings are fair worldwide, only based on AirTime.
 
 ##   No Mining
-######    Our fair reward distribution donates 45% of block reward to the Airtime system that distributes it to publishers and viewers with a 75/25 split.
- ######   Any extra use of your CPU/GPU, no overheats, no battery draining...
+######    Reward distribution splits 45% of the TUBE block reward to the AirTime system to publishers (75%) and viewers (25%).
+ ######   AirTime does not use CPU/GPU resources. It is not a crypto miner, so no overheating or battery drain.
 ![alt text](https://bittube.app/assets/images/block-reward-distribution.png)
 
 
@@ -40,7 +40,8 @@
 # Quick start
 ## For instance administrators
  * Install Airtime extension and create a user
-https://bittubeapp.com/
+https://bittube.app/
+ * Log in your Airtime extension
  * Install Airtime plugin in your instance
  * Login in your instance as root
  * Go to account settings
@@ -48,7 +49,8 @@ https://bittubeapp.com/
 
  ## For instance users
  * Install Airtime extension and create a user
-https://bittubeapp.com/
+https://bittube.app/
+ * Log in your Airtime extension
  * Login in the instance with your account
  * Go to account settings
  * Click on Link Account button and confirm data.
@@ -89,7 +91,7 @@ https://kb.bittubeapp.com/article/152-what-is-the-benefit-of-the-bittube-browser
 
 ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot5.jpg)
 
- *    6 Sometimes, you will need to reload the page to see the changes. (Better with Ctrl + F5)
+ *    6 Sometimes, you will need to reload the page to see the changes. (Best with Ctrl + F5)
 
  *    7 Now, by hovering your Link Account button, it will show a message with your Link status.
 
