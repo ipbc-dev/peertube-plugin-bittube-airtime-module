@@ -35,7 +35,9 @@
     - A bit below, click on 'Search' button (next to 'Installed' button).
     - In the searchbox below, you can type the name of the Plugin to easy find it.
     - Choose your Plugin and click Install (cloud icon).
+![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot10.jpg)
     - Before see the changes, you will need to hard reload your browser.
+![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot11.jpg)
 
 # Quick start
 ## For instance administrators
