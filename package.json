@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-bittube-airtime-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BitTube AirTime Module",
   "engine": {
     "peertube": ">=1.3.0"
@@ -58,6 +58,6 @@
     "ru-RU": "./languages/ru-RU/translates.json",
     "sv-SE": "./languages/sv-SE/translates.json",
     "zh-Hans-CN": "./languages/zh-Hans-CN/translates.json",
-    "zh-Hant-TW": "./languages/zh-Hant-TW/translates.json" 
+    "zh-Hant-TW": "./languages/zh-Hant-TW/translates.json"
   }
 }
