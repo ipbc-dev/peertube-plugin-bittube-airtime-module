@@ -18,7 +18,7 @@ function createLinkAccountButton(){
     const linkAccountButton = document.createElement('div')
     linkAccountButton.id = 'airtime-linking-account-btn'
     linkAccountButton.setAttribute('data-airtime-link-account-contentname', localStorage.getItem('username') + '@' + window.location.host)
-    linkAccountButton.setAttribute('data-airtime-link-account-displayname', 'PeerTube ' + localStorage.getItem('username') + '@' + window.location.host)
+    linkAccountButton.setAttribute('data-airtime-link-account-displayname', 'BitTube ' + localStorage.getItem('username') + '@' + window.location.host)
     linkAccountButton.setAttribute('data-airtime-link-account-use-event', true)
     return linkAccountButton
 }
