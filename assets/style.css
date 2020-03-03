@@ -120,6 +120,41 @@ body {
     padding-bottom: 45px !important;
 }
 
+/* Donation button */
+.p_donateTubes{
+    padding: 4px 15px 0px 15px;
+    text-align: center;
+    /* color: #66757f; */
+    border-radius: 3px !important;
+    cursor: pointer !important;
+    display: inline-block;
+    margin-top: -4px;
+    border: none;
+}
+.p_donateTubes .am-donate-main{
+    min-height: 30px !important;
+    cursor: pointer !important;
+}
+.p_donateTubes .am-donate-main .button{
+    height: 30px !important;
+    font-size: 13px !important;
+    padding: 5px 6px 4px 6px !important;
+    cursor: pointer !important;
+}
+.p_donateTubes .am-donate-main .button svg{
+    display: none; /* Hide annoying hearth */
+}
+.p_donateTubes .am-donate-main .donation-amount svg{
+    height: 13px !important;
+    width: 20px !important;
+    display: inline-block;
+    margin-top: -2px;
+    cursor: pointer !important;
+}
+.donation-details-icon{
+    top: 0px !important;
+}
+
 /* MOBILE MEDIA QUERIES */
 @media (max-width: 500px){
     .airtime-install-extension-suggestion-header{
