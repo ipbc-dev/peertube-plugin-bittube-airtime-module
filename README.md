@@ -7,6 +7,7 @@
  *  This plugin is not a crypto miner! It does not use heavy system resources.
  *  After installing this plugin on your instance and linking it with your Airtime account, you will earn TUBE cryptocurrency based on the time that people spend on your feeds and menus (not content).
  *  Users (uploaders) can link their Peertube account to their own BitTube Airtime account. Then they will earn TUBE based on the time that others watch their content and profile page.
+ *  Donate directly to a video or a comment with our extended buttons.
 
 # Advantages
 ######    With the BitTube AirTime Module, you are in full control of your online revenue while being able to provide an ad-free experience to your visitors.
@@ -64,6 +65,8 @@ https://bittube.app/
  *  1 Airtime Module: This will hook your active Airtime extension login directly in the platform.
  *  2 Link Account: create link between your Peertube account and Airtime user. Shows status if already linked. Only available in your Account settings,
  *  3 Airtime Extension header: This header recommends installing the Airtime extension and provides links to installation files and tutorials.
+ *  4 Donate buttons: This buttons will appear in video watch page and make you able to donate to the video creator or to a comment in a really easy way.
+ ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-bittube-airtime-module/master/public/images/DonateButton2.png)
 
 # Features for instances
 ![alt text](https://raw.githubusercontent.com/ipbc-dev/peertube-plugin-airtime-module/master/public/images/screenshot2.jpg)
