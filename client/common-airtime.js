@@ -43,7 +43,9 @@ async function setContentIdFromAccountName (userName) {
 }
 
 async function setContentIdFromVideoUuid (videoUUID) {
-  return setAirtimeContentID(getContentIdFromVideo(await api.getVideoInfo(videoUUID)))
+  const videoIdInfo = await api.getVideoInfo(videoUUID)
+  shared.injectDonateButton(videoIdInfo)
+  return setAirtimeContentID(getContentIdFromVideo(videoIdInfo))
 }
 
 async function setContentIdFromChannelName (channelName) {
