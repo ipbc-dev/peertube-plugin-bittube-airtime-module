@@ -35,6 +35,9 @@ function register ({ registerHook, peertubeHelpers }) {
         if(params.path == '/my-account/settings' || params.path == '/my-account'){
           ui.injectLinkAccountButton(peertubeHelpers)
         }
+        if(params.path.indexOf('/videos/watch/') != -1){
+          shared.injectDonateComments()
+        }
       }
     })
     

@@ -116,7 +116,7 @@ export async function injectDonateComments(){
               host: threadHostName
             }
           }
-          this.debug("-- Airtime Plugin -- thread info is: ", threadInfo)
+          debug("-- Airtime Plugin -- thread info is: ", threadInfo)
           const threadButtonId = buttonId + '/' + threadID
           DOMthread.appendChild(createDonateButton(threadInfo.account.name, threadInfo.account.host, threadButtonId, 'donateToComment'))
           document.getElementById(threadButtonId).addEventListener('donated', (e) => {
