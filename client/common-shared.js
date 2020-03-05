@@ -104,8 +104,8 @@ export async function injectDonateComments(){
         const DOMthread = DOMThreadElements[i]
         const DOMthreadParent = DOMthread.parentElement
         const threadURL = DOMthreadParent.querySelector('.comment-date').href.toString()
-        const threadAccountName = DOMthreadParent.querySelector('.comment-account-name').textContent
         const threadAccountFID = DOMthreadParent.querySelector('.comment-account-fid').textContent
+        const threadAccountName = threadAccountFID.split('@')[0]
         const threadHostName = threadAccountFID.split('@').length > 1 ? threadAccountFID.split('@')[1] : window.location.host
         const threadID = threadURL.split("=").length > 0 ? threadURL.split('=')[1] : null
         if(threadID && DOMthread.querySelector('.donateToComment') == null){
