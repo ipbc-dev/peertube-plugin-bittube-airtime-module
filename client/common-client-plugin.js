@@ -37,8 +37,16 @@ function register ({ registerHook, peertubeHelpers }) {
         }
       }
     })
-  
+    
+    /* Hook for adding donate buttons to video comments(threads) */
+    registerHook({
+      target: 'action:video-watch.video-threads.loaded',
+      handler: params => {
+        shared.injectDonateComments()
+      }
+    })
   })
+
 
   /* CUSTOM AIRTIME LINK ACCOUNT event */
   document.addEventListener('airtime-link-account-info', (event) => {

@@ -30,8 +30,8 @@ export async function getVideoInfo (name) {
   return info
 }
 
-export async function getVideoComments(videoId){
-  const apiURL = "/api/v1/videos/" + videoId + "/comment-threads"
+export async function getVideoThread(videoId, threadId){
+  const apiURL = "/api/v1/videos/" + videoId + "/comment-threads/" + threadId
   const info = await callAPI(apiURL)
   return info
 }
