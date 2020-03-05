@@ -61,7 +61,7 @@ function addComment(ammount, videoInfo){
 
 function addReplytoComment(ammount, videoInfo, commentInfo){
   const profileLinkUrl = 'https://' + commentInfo.account.host + '/accounts/' + commentInfo.account.name + '@' + commentInfo.account.host
-  this.debug("ICEICE profileLinkUrl is: ", profileLinkUrl);
+  debug("ICEICE profileLinkUrl is: ", profileLinkUrl);
   const bittubeLink = '<a class="comment-account" target="_blank" href="https://bittube.app"><span>BitTube Airtime extension</span></a>' 
   const userProfileLink = '<a class="comment-account" target="_blank" href="' + profileLinkUrl.toString() + '"><span>' + commentInfo.account.name + '</span></a>'
   const tubeOrtubes = ammount == 1 || ammount == '1' ? " tube to " : " tubes to "
@@ -74,7 +74,7 @@ let globalVideoInfo = null;
 export async function injectDonateButton(videoInfo){
   if (!videoInfo) return
   globalVideoInfo = videoInfo
-  this.debug("Donate button, received info is: ", videoInfo)
+  debug("Donate button, received info is: ", videoInfo)
   /* Clean old donate buttons after navigation */
   const oldButtons = document.getElementsByClassName('p_donateTubes')
   for(var i=0; i < oldButtons.length; i++){
