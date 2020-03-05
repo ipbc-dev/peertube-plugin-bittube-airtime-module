@@ -61,7 +61,7 @@ function addComment(ammount, videoInfo){
 
 function addReplytoComment(ammount, videoInfo, commentInfo){
   const profileLinkUrl = 'https://' + commentInfo.account.host + '/accounts/' + commentInfo.account.name + '@' + commentInfo.account.host
-  console.log("ICEICE profileLinkUrl is: ", profileLinkUrl);
+  this.debug("ICEICE profileLinkUrl is: ", profileLinkUrl);
   const bittubeLink = '<a class="comment-account" target="_blank" href="https://bittube.app"><span>BitTube Airtime extension</span></a>' 
   const userProfileLink = '<a class="comment-account" target="_blank" href="' + profileLinkUrl.toString() + '"><span>' + commentInfo.account.name + '</span></a>'
   const tubeOrtubes = ammount == 1 || ammount == '1' ? " tube to " : " tubes to "
@@ -106,11 +106,9 @@ export async function injectDonateComments(){
         const threadURL = DOMthreadParent.querySelector('.comment-date').href.toString()
         const threadAccountName = DOMthreadParent.querySelector('.comment-account-name').textContent
         const threadAccountFID = DOMthreadParent.querySelector('.comment-account-fid').textContent
-        const threadHostName = threadAccountFID.split('@').length > 0 ? threadAccountFID.split('@')[1] : globalVideoInfo.account.host 
+        const threadHostName = threadAccountFID.split('@').length > 1 ? threadAccountFID.split('@')[1] : window.location.origin
         const threadID = threadURL.split("=").length > 0 ? threadURL.split('=')[1] : null
         if(threadID && DOMthread.querySelector('.donateToComment') == null){
-          // const threadData = await api.getVideoThread(globalVideoInfo.uuid, threadID)
-          // const threadInfo = threadData.comment
           const threadInfo = {
             threadId: threadID,
             account: {
@@ -118,6 +116,7 @@ export async function injectDonateComments(){
               host: threadHostName
             }
           }
+          this.debug("-- Airtime Plugin -- thread info is: ", threadInfo)
           const threadButtonId = buttonId + '/' + threadID
           DOMthread.appendChild(createDonateButton(threadInfo.account.name, threadInfo.account.host, threadButtonId, 'donateToComment'))
           document.getElementById(threadButtonId).addEventListener('donated', (e) => {
