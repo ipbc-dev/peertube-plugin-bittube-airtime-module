@@ -61,12 +61,12 @@ function addComment(ammount, videoInfo){
 
 function addReplytoComment(ammount, videoInfo, commentInfo){
   const profileLinkUrl = 'https://' + commentInfo.account.host + '/accounts/' + commentInfo.account.name + '@' + commentInfo.account.host
-  debug("ICEICE profileLinkUrl is: ", profileLinkUrl);
+  debug("-- Airtime Plugin -- profileLinkUrl is: ", profileLinkUrl);
   const bittubeLink = '<a class="comment-account" target="_blank" href="https://bittube.app"><span>BitTube Airtime extension</span></a>' 
   const userProfileLink = '<a class="comment-account" target="_blank" href="' + profileLinkUrl.toString() + '"><span>' + commentInfo.account.name + '</span></a>'
   const tubeOrtubes = ammount == 1 || ammount == '1' ? " tube to " : " tubes to "
   const msg = "I just donated " + ammount + tubeOrtubes + userProfileLink + " for this comment, using " + bittubeLink
-  api.addReplytoVideoComment(videoInfo.uuid,commentInfo.threadId, msg)
+  api.addReplytoVideoComment(videoInfo.uuid,commentInfo.id || commentInfo.threadId, msg)
 }
 
 let globalVideoInfo = null;
@@ -74,7 +74,7 @@ let globalVideoInfo = null;
 export async function injectDonateButton(videoInfo){
   if (!videoInfo) return
   globalVideoInfo = videoInfo
-  debug("Donate button, received info is: ", videoInfo)
+  debug("-- Airtime Plugin -- Donate button, received info is: ", videoInfo)
   /* Clean old donate buttons after navigation */
   const oldButtons = document.getElementsByClassName('p_donateTubes')
   for(var i=0; i < oldButtons.length; i++){
@@ -87,17 +87,24 @@ export async function injectDonateButton(videoInfo){
     DOMelement.appendChild(createDonateButton(videoInfo.account.name, videoInfo.account.host, buttonId));
     /* Donations listener, adds a comment on each donation */
     document.getElementById(buttonId).addEventListener('donated', (e) => {
-      this.debug("Triggering event donate with data: ", e);
+      debug("-- Airtime Plugin -- Triggering event donate with data: ", e);
       addComment(e.detail.amount.toString() , videoInfo)
     })
   }
   this.injectDonateComments()
 }
 let commentRetries = 0
-export async function injectDonateComments(){
+let threadsWithButton = []
+export async function resetThreadsWithButton(){
+  threadsWithButton = []
+  return true
+}
+export async function injectDonateComments(replyData = null){
   if(globalVideoInfo){
     const buttonId = 'spanDonate/' + globalVideoInfo.uuid
     const DOMThreadElements = document.getElementsByClassName('comment-actions')
+    debug("-- Airtime Plugin -- DOMThreadElements are: ", DOMThreadElements)
+    debug("-- Airtime Plugin -- DOMThreadElements are: ", DOMThreadElements.length)
     if(DOMThreadElements && DOMThreadElements.length > 0){
       /* Injecting comment donation button */
       for (var i=0; i < DOMThreadElements.length; i++){
@@ -108,7 +115,11 @@ export async function injectDonateComments(){
         const threadAccountName = threadAccountFID.split('@')[0]
         const threadHostName = threadAccountFID.split('@').length > 1 ? threadAccountFID.split('@')[1] : window.location.host
         const threadID = threadURL.split("=").length > 0 ? threadURL.split('=')[1] : null
-        if(threadID && DOMthread.querySelector('.donateToComment') == null){
+        debug("-- Airtime Plugin -- threadID is: ", threadID)
+        if( threadID ) DOMthreadParent.id = 'thread/' + threadID /* We add this id to add replies donation buttons correctly later */
+
+        if(threadID && !threadsWithButton.includes(threadID)){
+          threadsWithButton.push(threadID)
           const threadInfo = {
             threadId: threadID,
             account: {
@@ -120,6 +131,9 @@ export async function injectDonateComments(){
           const threadButtonId = buttonId + '/' + threadID
           DOMthread.appendChild(createDonateButton(threadInfo.account.name, threadInfo.account.host, threadButtonId, 'donateToComment'))
           document.getElementById(threadButtonId).addEventListener('donated', (e) => {
+            debug("-- Airtime Plugin -- Donation click with info: ", globalVideoInfo)
+            debug(" thread info: ", threadInfo)
+            debug(" and amount: ", e.detail.amount.toString())
             addReplytoComment(e.detail.amount.toString() , globalVideoInfo, threadInfo)
           })
         }
@@ -130,8 +144,8 @@ export async function injectDonateComments(){
         if(commentRetries < 2){
           commentRetries++
           setTimeout(() => {
-            injectDonateComments()
-          }, commentRetries * 500);
+            injectDonateComments(replyData)
+          }, commentRetries * 200);
         }else{
           commentRetries = 0;
         }
@@ -141,7 +155,7 @@ export async function injectDonateComments(){
       if(commentRetries < 5){
         commentRetries++
         setTimeout(() => {
-          injectDonateComments()
+          injectDonateComments(replyData)
         }, commentRetries * 1000);
       }else{
         commentRetries = 0;
@@ -150,3 +164,67 @@ export async function injectDonateComments(){
   }
 
 }
+
+async function repliesSublevels(DOMElements, DOMindex, replies, replyIndex = 0){
+  debug('-- Airtime Plugin -- repliesSublevels with replies: ', replies)
+  debug('-- Airtime Plugin -- repliesSublevels with DOMindex: ', DOMindex)
+  debug('-- Airtime Plugin -- repliesSublevels with replyIndex: ', replyIndex)
+  if(globalVideoInfo && DOMElements[DOMindex]){
+    const reply = replies[replyIndex]
+    const buttonId = 'spanDonate/' + globalVideoInfo.uuid
+    const threadButtonId = buttonId + '/' + reply.comment.id
+    DOMElements[DOMindex].appendChild(createDonateButton(reply.comment.account.name, reply.comment.account.host, threadButtonId, 'donateToComment donateToReply'))
+    DOMindex++
+    document.getElementById(threadButtonId).addEventListener('donated', (e) => {
+      debug("-- Airtime Plugin -- Donation click with info: ", globalVideoInfo)
+      reply.threadId = reply.comment.id
+      debug(" thread info: ", reply)
+      debug(" and amount: ", e.detail.amount.toString())
+      addReplytoComment(e.detail.amount.toString() , globalVideoInfo, reply.comment)
+    })
+    if (reply.children.length > 0){
+      /* We go inside (reply [to reply]^X of comment) */
+      const newDOMindex = await repliesSublevels(DOMElements, DOMindex, reply.children)
+      /* After all sub-arrays are completed, we keep going in the original one */
+      if(replies[replyIndex + 1] != undefined){
+        return repliesSublevels(DOMElements, newDOMindex, replies , ++replyIndex)
+      }
+      /* Going a level back, we need to return DOMindex*/
+      return newDOMindex
+    }else{
+      /* There is not sublevels so, we check if this array have one more */
+      if(replies[replyIndex + 1] != undefined){
+        return repliesSublevels(DOMElements, DOMindex, replies , ++replyIndex)
+      }
+      /* If it doesn't */
+      return DOMindex
+    }
+  }
+}
+
+let retryReplies = 0;
+export async function injectDonatetoReplies(replyData = null){
+  if(globalVideoInfo){
+    // const buttonId = 'spanDonate/' + globalVideoInfo.uuid
+    const DOMThreadElements = document.getElementById('thread/' + replyData.comment.threadId).querySelectorAll('.children .comment-actions')
+    debug("-- Airtime Plugin -- injectDonatetoReplies DOMElements are: ", DOMThreadElements)
+    if(DOMThreadElements && DOMThreadElements.length > 0){
+      debug("-- Airtime Plugin -- injectDonatetoReplies replyData.children are: ", replyData.children)
+      let DOMindex = 0
+      repliesSublevels(DOMThreadElements, DOMindex, replyData.children)
+      retryReplies = 0
+      }else{
+        /* Sometimes, it may load comments while we're painting the buttons */
+        /* So, better to recheck if we have comments without donate button */
+        if(retryReplies < 5){
+          debug("-- Airtime Plugin -- RECALLING injectDonatetoReplies after setTimeOut")
+          retryReplies++
+          setTimeout(() => {
+            injectDonatetoReplies(replyData)
+          }, retryReplies * 200);
+        }else{
+          retryReplies = 0;
+        }
+      }
+    }
+  }

@@ -36,7 +36,9 @@ function register ({ registerHook, peertubeHelpers }) {
           ui.injectLinkAccountButton(peertubeHelpers)
         }
         if(params.path.indexOf('/videos/watch/') != -1){
+          const res =  shared.resetThreadsWithButton();
           shared.injectDonateComments()
+
         }
       }
     })
@@ -45,10 +47,22 @@ function register ({ registerHook, peertubeHelpers }) {
     registerHook({
       target: 'action:video-watch.video-threads.loaded',
       handler: params => {
+        shared.debug("--- AIRTIME ACTION --- Triggering action hook, video-threads.loaded, with data:", params)
         shared.injectDonateComments()
+        }
+      })
+    })
+    /* Hook for adding donate buttons to video comments(threads) REPLIES */
+    registerHook({
+      target: 'action:video-watch.video-threads.reply-loaded',
+      handler: params => {
+        shared.debug("--- AIRTIME ACTION --- Triggering action hook, video-threads.reply-loaded, with data:", params)
+        setTimeout(() => {
+          shared.injectDonatetoReplies(params.data)
+        }, 200);
       }
     })
-  })
+
 
 
   /* CUSTOM AIRTIME LINK ACCOUNT event */
