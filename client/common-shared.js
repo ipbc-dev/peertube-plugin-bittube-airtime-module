@@ -116,7 +116,7 @@ export async function injectDonateComments(replyData = null){
         const threadHostName = threadAccountFID.split('@').length > 1 ? threadAccountFID.split('@')[1] : window.location.host
         const threadID = threadURL.split("=").length > 0 ? threadURL.split('=')[1] : null
         debug("-- Airtime Plugin -- threadID is: ", threadID)
-        if( threadID ) DOMthreadParent.id = 'thread/' + threadID /* We add this id to add replies donation buttons correctly later */
+        if( threadID && DOMthreadParent) DOMthreadParent.id = 'thread/' + threadID /* We add this id to add replies donation buttons correctly later */
 
         if(threadID && !threadsWithButton.includes(threadID)){
           threadsWithButton.push(threadID)
@@ -171,17 +171,19 @@ async function repliesSublevels(DOMElements, DOMindex, replies, replyIndex = 0){
   debug('-- Airtime Plugin -- repliesSublevels with replyIndex: ', replyIndex)
   if(globalVideoInfo && DOMElements[DOMindex]){
     const reply = replies[replyIndex]
+    if(!reply.comment.isDeleted){
     const buttonId = 'spanDonate/' + globalVideoInfo.uuid
     const threadButtonId = buttonId + '/' + reply.comment.id
-    DOMElements[DOMindex].appendChild(createDonateButton(reply.comment.account.name, reply.comment.account.host, threadButtonId, 'donateToComment donateToReply'))
-    DOMindex++
-    document.getElementById(threadButtonId).addEventListener('donated', (e) => {
-      debug("-- Airtime Plugin -- Donation click with info: ", globalVideoInfo)
-      reply.threadId = reply.comment.id
-      debug(" thread info: ", reply)
-      debug(" and amount: ", e.detail.amount.toString())
-      addReplytoComment(e.detail.amount.toString() , globalVideoInfo, reply.comment)
-    })
+      DOMElements[DOMindex].appendChild(createDonateButton(reply.comment.account.name, reply.comment.account.host, threadButtonId, 'donateToComment donateToReply'))
+      DOMindex++
+      document.getElementById(threadButtonId).addEventListener('donated', (e) => {
+        debug("-- Airtime Plugin -- Donation click with info: ", globalVideoInfo)
+        reply.threadId = reply.comment.id
+        debug(" thread info: ", reply)
+        debug(" and amount: ", e.detail.amount.toString())
+        addReplytoComment(e.detail.amount.toString() , globalVideoInfo, reply.comment)
+      })
+    }
     if (reply.children.length > 0){
       /* We go inside (reply [to reply]^X of comment) */
       const newDOMindex = await repliesSublevels(DOMElements, DOMindex, reply.children)
