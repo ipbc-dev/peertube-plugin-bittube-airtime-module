@@ -54,7 +54,7 @@ function register ({ registerHook, peertubeHelpers }) {
     })
     /* Hook for adding donate buttons to video comments(threads) REPLIES */
     registerHook({
-      target: 'action:video-watch.video-threads.reply-loaded',
+      target: 'action:video-watch.video-thread-replies.loaded',
       handler: params => {
         shared.debug("--- AIRTIME ACTION --- Triggering action hook, video-threads.reply-loaded, with data:", params)
         setTimeout(() => {
