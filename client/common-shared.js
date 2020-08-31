@@ -1,6 +1,6 @@
 import * as api from './common-api.js'
 
-export const AIRTIMEMODULEURL = 'https://cdn.jsdelivr.net/gh/ipbc-dev/airtime-module-dist@1.0.1-p9/tubepay/airtime.loader.js'
+export const AIRTIMEMODULEURL = 'https://cdn.jsdelivr.net/gh/ipbc-dev/airtime-module-dist@master/tubepay/'
 export const LinkApiUrl = 'https://us-central1-bittube-airtime-extension.cloudfunctions.net/peertubeLinkHandler'
 
 // Fixed data for the whole Peertube Federation
