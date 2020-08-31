@@ -1,14 +1,14 @@
 import * as api from './common-api.js'
 
 // export const AIRTIMEMODULEURL = 'https://cdn.jsdelivr.net/gh/ipbc-dev/airtime-module-dist@1.0.1-p9/tubepay/airtime.loader.js'
-export const AIRTIMEMODULEURL = 'http://localhost:8080'
+export const AIRTIMEMODULEURL = 'http://localhost:8080/airtime.loader.js'
 export const LinkApiUrl = 'https://us-central1-bittube-airtime-extension-dev.cloudfunctions.net/peertubeLinkHandler'
 
 // Fixed data for the whole Peertube Federation
 // Platform Name: PeerTube Federation
 // Platform UUID: a93e5513-4772-e3d0-8b9f-82bfe73a71de
-export const PLATFORMDISPLAY = 'PeerTube Federation'
-export const PLATFORMUUID = 'a93e5513-4772-e3d0-8b9f-82bfe73a71de'
+export const PLATFORMDISPLAY = 'Peertube Federation Dev'
+export const PLATFORMUUID = '8827b82e-3445-e144-a75e-c07e295b5ca1'
 
 export let peertubeSupportEnabled = false
 
