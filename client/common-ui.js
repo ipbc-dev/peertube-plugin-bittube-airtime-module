@@ -31,7 +31,7 @@ export function injectLinkAccountButton(peertubeHelpers) {
         /* Title */
         const linkAccountTitle = document.createElement('div')
         linkAccountTitle.id = 'airtime-linkAccount-title'
-        linkAccountTitle.className = 'airtime-linking-account-title'
+        linkAccountTitle.className = 'airtime-linking-account-title form-group col-12 col-lg-4 col-xl-3'
         peertubeHelpers.translate('airtime-settings-title').then(translation => {
             linkAccountTitle.innerText = translation;
         })
@@ -54,14 +54,21 @@ export function injectLinkAccountButton(peertubeHelpers) {
         const linkAccountButton = createLinkAccountButton()
         /* Content container */
         const linkAccountContent = document.createElement('div')
-        linkAccountContent.class = 'airtime-linkAccount-content'
+        linkAccountContent.className = 'airtime-linkAccount-content form-group form-group-right col-12 col-lg-8 col-xl-9'
         linkAccountContent.appendChild(linkAccountButton)
         linkAccountContent.appendChild(linkAccountLinks)
         shared.debug("=== ====AIRTIME DEBUG ====== element is: ", linkAccountContent);
+
+        /* Create Main Container and append things to it */
+        const mainContainer = document.createElement('div')
+        mainContainer.className = 'form-row mt-5'
+        mainContainer.appendChild(linkAccountTitle)
+        mainContainer.appendChild(linkAccountContent)
         const settingsMenu = document.querySelector('my-account-settings');
         if (settingsMenu != null && settingsMenu != undefined) {
-            settingsMenu.insertBefore(linkAccountContent, settingsMenu.children[4])
-            settingsMenu.insertBefore(linkAccountTitle, settingsMenu.children[4])
+            settingsMenu.insertBefore(mainContainer, settingsMenu.children[4])
+            // settingsMenu.insertBefore(linkAccountContent, settingsMenu.children[4])
+            // settingsMenu.insertBefore(linkAccountTitle, settingsMenu.children[4])
         }
 
 }
