@@ -31,7 +31,7 @@ export function injectLinkAccountButton(peertubeHelpers) {
         /* Title */
         const linkAccountTitle = document.createElement('div')
         linkAccountTitle.id = 'airtime-linkAccount-title'
-        linkAccountTitle.className = 'airtime-linking-account-title form-group col-12 col-lg-4 col-xl-3'
+        linkAccountTitle.className = 'account-title form-group col-12 col-lg-4 col-xl-3'
         peertubeHelpers.translate('airtime-settings-title').then(translation => {
             linkAccountTitle.innerText = translation;
         })

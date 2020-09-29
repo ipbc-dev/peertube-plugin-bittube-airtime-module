@@ -9,6 +9,13 @@ body {
     color: var(--mainColor);
     font-weight: 700;
 }
+.account-title{
+    text-transform: uppercase;
+    color: var(--mainColor);
+    font-weight: 700;
+    font-size: 110%;
+    margin-bottom: 10px;
+}
 .airtime-linkAccount-content{
     min-height: 100px;
 }
