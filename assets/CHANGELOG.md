@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.3.0
+ * Fixing minor bugs
+ * Updating styles for matching peertube v2.4.0
+
+## v2.2.0
+ * Updating module link to get always @latest version
+ 
 ## v2.0.0
 
  * Adding Donation buttons to videos and video-threads (comments)
