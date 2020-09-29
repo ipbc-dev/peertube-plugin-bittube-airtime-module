@@ -6,11 +6,8 @@ body {
 /* Link Account title */
 .airtime-linking-account-title{
     text-transform: uppercase;
-    /* color: var(--mainColor);
+    color: var(--mainColor);
     font-weight: 700;
-    font-size: 13px; */
-    /* margin-top: 55px;
-    margin-bottom: 30px; */
 }
 .airtime-linkAccount-content{
     min-height: 100px;
